@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+сторінка сайту про нас 
+{% endblock %}
+
+{% block body %}
+<main>
+    <div class="container">
+    <h1>Ми це платформа для ваших статтей</h1>
+    <p class="fs-5 col-md-8">Преса корисна вже тому, що вона вчить нас не довіряти пресі.  © С. Батлер</p>
+
+    <div class="mb-5">
+      <a class="btn btn-warning" href="\create-article">Додати cвою статтю</a>
+    </div>
+
+    <hr class="col-3 col-md-2 mb-5">
+
+    <div class="row g-5">
+      <div class="col-md-6">
+        <h2>Наші контакти</h2>
+        <p>+380 96 296 75 91</p>
+        <p>telegram: @krapka_v_komi</p>
+        <p>lg2031832@gmail.com</p>
+        <ul class="icon-list ps-0">
+          <li class="d-flex align-items-start mb-1"><a href="https://github.com/krapkaVKomi" rel="noopener" target="_blank">Очікуйте оновлень на Github</a></li>
+        </ul>
+      </div>
+        <div class="col-md-6.5">
+          <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <img src="https://lh3.googleusercontent.com/a-/AFdZucqx973LA5RisvbIpzavt4jG8gILP0Hks6H2dRaDYw=s360-p-no" >
+        </div>
+          
+    </div>
+</div>
+  </main>
+{% endblock %}
