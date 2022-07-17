@@ -4,3 +4,4 @@ the first version of the blog possibilities: - save articles to the database thr
 technologies:
 - Python with flask
 - CSS and HTML with bootstrap 5
+- sqlite
