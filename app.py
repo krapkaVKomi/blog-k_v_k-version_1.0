@@ -15,9 +15,29 @@ def about():
     return render_template('about.html')
 
 
+@app.route('/post')
+def post():
+    return render_template('post.html')
+
+
 @app.route('/posts')
 def posts():
-    return render_template('posts.html')
+    database = sqlite3.connect('blog.db')
+    cursor = database.cursor()
+    database.execute('CREATE TABLE IF NOT EXISTS {}(title, intro, text)' .format('data'))
+    database.commit()
+    art = cursor.execute('SELECT title FROM data').fetchall()
+    art1 = cursor.execute('SELECT intro FROM data').fetchall()
+    art2 = cursor.execute('SELECT text FROM data').fetchall()
+    article = []
+    for i in range(len(art)-1, -1, -1):
+        box = []
+        box.append(art[i])
+        box.append(art1[i])
+        box.append(art2[i])
+        article.append(box)
+    return render_template('posts.html', article=article)
+    
 
 
 @app.route('/create-article', methods=['POST', 'GET'])
@@ -31,10 +51,10 @@ def create_article():
         cursor = database.cursor()
         database.execute('CREATE TABLE IF NOT EXISTS {}(title, intro, text)' .format('data'))
         database.commit()
-
         cursor.execute('INSERT INTO data VALUES(?, ?, ?)', (title, intro, text))
         database.commit()
-        return render_template('posts.html')
+        return render_template('post.html')
+        
     else:
         return render_template('create-article.html')
 
