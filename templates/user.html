@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<h5>User page</h5>
+{% endblock %}
+
+
+{% block body %}
+<div class="row align-items-md-stretch">
+    <div class="container-fluid py-5">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2>{{quotes[0]}}</h2>
+        <h4>© {{quotes[1]}}</h4>
+        <button class="btn btn-outline-light" type="button">Створіть свій акаут</button>
+      </div>
+    </div>
+    
+  </div>
+
+
+{% endblock %}

@@ -11,13 +11,16 @@
 <h1>Всі статті сайту</h1>
 
 
-{% for i in article %}
-<div class="alert alert-info">
-<h2>{{ i[0][0] }}</h2>
-<h5>{{ i[1][0] }}</h5>
-<p>{{ i[2][0] }}</p>
-</div>
-{% endfor %}
+    {% for i in article %}
+    <div class="alert alert-info">
+    <h2>{{ i[0][0] }}</h2>
+    <h5>{{ i[1][0] }}</h5>
+    <a class="btn btn-warning" href="\posts\{{i[3]}}">Читати статтю</a>
+    <p>{{ i[2][0] }}</p>
+    </div>
+    {% endfor %}
+
+<p>В нас поки немає статтей</p>
 
 </div>
 
